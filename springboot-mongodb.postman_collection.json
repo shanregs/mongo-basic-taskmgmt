@@ -1,0 +1,110 @@
+{
+  "info": {
+    "_postman_id": "aabfa4e0-2025-4b79-a3fd-c80f6ec85f77",
+    "name": "SpringBoot MongoDB - User & Role CRUD",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Role",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"ADMIN\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/roles/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "roles", ""]
+        }
+      }
+    },
+    {
+      "name": "Get Role by Name",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/api/roles/name/ADMIN",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "roles", "name", "ADMIN"]
+        }
+      }
+    },
+    {
+      "name": "Get All Roles",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/api/roles/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "roles", ""]
+        }
+      }
+    },
+    {
+      "name": "Create User",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Alice\",\n  \"email\": \"alice@example.com\",\n  \"addresses\": [\n    { \"city\": \"New York\", \"zipCode\": \"10001\" },\n    { \"city\": \"Chicago\", \"zipCode\": \"60601\" }\n  ],\n  \"roleId\": \"<replace-with-role-id>\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/users/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "users", ""]
+        }
+      }
+    },
+    {
+      "name": "Get Users by City",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/api/users/city/New York",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "users", "city", "New York"]
+        }
+      }
+    },
+    {
+      "name": "Get All Users",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/api/users/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "users", ""]
+        }
+      }
+    },
+    {
+      "name": "Delete User by ID",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:8080/api/users/<user-id>",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "users", "<user-id>"]
+        }
+      }
+    }
+  ]
+}
